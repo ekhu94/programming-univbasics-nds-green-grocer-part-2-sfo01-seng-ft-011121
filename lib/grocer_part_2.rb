@@ -29,7 +29,7 @@ end
 
 def checkout(cart, coupons)
   update_cart = consolidate_cart(cart)
-  update_cart = apply_coupons(cart, coupons)
+  update_cart = apply_coupons(update_cart, coupons)
   update_cart = apply_clearance(update_cart)
   total = 0
   update_cart.each { |item| total += item[:price] * item[:count] }
