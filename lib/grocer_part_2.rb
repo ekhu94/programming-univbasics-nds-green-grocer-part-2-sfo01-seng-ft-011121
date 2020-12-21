@@ -28,13 +28,8 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  # Consult README for inputs and outputs
-  #
-  # This method should call
-  # * consolidate_cart
-  # * apply_coupons
-  # * apply_clearance
-  #
-  # BEFORE it begins the work of calculating the total (or else you might have
-  # some irritated customers
+  update_cart = apply_coupons(cart, coupons)
+  update_cart = apply_clearance(update_cart)
+  total = 0
+  update_cart.each { |item| total += item[:price] * item[:count]
 end
