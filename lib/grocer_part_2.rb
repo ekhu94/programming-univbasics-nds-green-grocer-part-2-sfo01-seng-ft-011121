@@ -5,7 +5,7 @@ def apply_coupons(cart, coupons)
     item = find_item_by_name_in_collection(coupon[:item], cart)
     if item && item[:count] >= coupon[:num]
       discounted_item = {
-        item: "#{item[:item} W/COUPON",
+        item: "#{item[:item]} W/COUPON",
         price: coupon[:cost] / coupon[:num],
         clearance: item[:clearance],
         count: coupon[:num] - item[:count]
